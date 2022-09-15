@@ -2,7 +2,7 @@ interface Store<T> {
   getState: () => void;
   setState: (state: T) => void;
 
-  subscribe: (listener: <T>(state: T) => typeof state) => void;
+  subscribe: (listener: (state: T) => typeof state) => void;
 }
 type NewStore =<T>(initialState: T)=>Store<T>
 
