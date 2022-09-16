@@ -6,7 +6,7 @@ interface Store<T> {
 }
 type NewStore =<T>(initialState: T)=>Store<T>
 
-const createStore = (initialState: NewStore) => {
+const createStore:NewStore = (initialState) => {
   let currentState = initialState;
   const listeners = new Set();
 
@@ -26,9 +26,8 @@ const createStore = (initialState: NewStore) => {
   };
 };
 
-const store = createStore({
-  A: 0,
-  B: 0,
-});
+const prevStore = {A: 0, B:0}
+
+const store = createStore(prevStore);
 
 export default store;
